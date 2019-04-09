@@ -19,7 +19,7 @@ if (!team || !daysLimit) {
         .filter( app => moment().diff(moment(app.created_at), 'days') > parseInt(daysLimit))
 
     logger.info(`going to delete ${toKill.length} apps: ${toKill.map(app => app.name).join(',')}`);
-    
+        
     for (const app of toKill) {
         await heroku.delete(`/apps/${app.name}`);
     }
