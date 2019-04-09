@@ -1,0 +1,25 @@
+{
+  "name": "heroku-reaper",
+  "version": "1.0.0",
+  "description": "removes heroku dynos older than a certain quantity of days",
+  "main": "reaper.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node built/reaper.js",
+    "start-local": "npm run build && DAYS_LIMIT=30 TEAM_NAME=autodeployed-demos node built/reaper.js"
+  },
+  "author": "Shane McLaughlin",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/heroku-logger": "^0.1.0",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^11.13.2",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.4.2"
+  },
+  "dependencies": {
+    "heroku-client": "^3.0.7",
+    "heroku-logger": "^0.3.3",
+    "moment": "^2.24.0"
+  }
+}
